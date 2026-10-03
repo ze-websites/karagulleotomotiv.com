@@ -374,29 +374,29 @@
               ></iframe>
             </div>
           </div>
-          <form
-            action="mailto:karagullemotor@gmail.com"
-            method="post"
-            enctype="text/plain"
-          >
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input
+              type="hidden"
+              name="access_key"
+              value="e419a6f2-0ac9-4892-9ea0-cb5fc3a4420c"
+            />
             <label
               >Ad Soyad<input
                 type="text"
-                name="ad"
+                name="name"
                 required
                 autocomplete="name"
             /></label>
             <label
               >E-posta<input
                 type="email"
-                name="eposta"
+                name="email"
                 required
                 autocomplete="email"
             /></label>
-            <label
-              >Telefon<input type="tel" name="telefon" autocomplete="tel"
+            <label>Telefon<input type="tel" name="phone" autocomplete="tel"
             /></label>
-            <label>Mesajınız<textarea name="mesaj" required></textarea></label>
+            <label>Mesajınız<textarea name="message" required></textarea></label>
             <button type="submit" class="btn">Mesajı Gönder</button>
           </form>
         </div>
