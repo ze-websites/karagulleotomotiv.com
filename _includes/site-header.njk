@@ -1,0 +1,74 @@
+<header>
+  {% set isEnglish = language == "en" %}
+  {% if isEnglish %}
+    {% set languageRoot = assetBase ~ "en/" %}
+    {% set productRoot = assetBase ~ "en/product/" %}
+  {% else %}
+    {% set languageRoot = assetBase %}
+    {% set productRoot = assetBase ~ "urunler/" %}
+  {% endif %}
+  <div class="container nav">
+    <a
+      href="{{ languageRoot }}#top"
+      class="brand"
+      aria-label="Karagülle Motorlu Araçlar"
+    >
+      <img
+        src="{{ assetBase }}assets/img/logo.png"
+        alt="Karagülle Motorlu Araçlar"
+      />
+    </a>
+    <input type="checkbox" id="nav-toggle" aria-label="Menüyü aç" />
+    <label for="nav-toggle" class="burger">
+      <span></span>
+    </label>
+    <ul class="menu">
+      <li>
+        <a href="{{ languageRoot }}#top">{% if isEnglish %}Home{% else %}Ana Sayfa{% endif %}</a>
+      </li>
+      <li>
+        <a href="{{ languageRoot }}#hakkimizda">{% if isEnglish %}About Us{% else %}Hakkımızda{% endif %}</a>
+      </li>
+      <li>
+        <a href="{{ languageRoot }}#hizmetler">{% if isEnglish %}Services{% else %}Hizmetler{% endif %}</a>
+      </li>
+      <li>
+        <a href="{{ languageRoot }}#urunler">{% if isEnglish %}Products{% else %}Ürün Listesi{% endif %}</a>
+      </li>
+      <li>
+        <a href="{{ languageRoot }}#iletisim" class="cta">
+          {% if isEnglish %}Contact{% else %}İletişim{% endif %}
+        </a>
+      </li>
+      <li>
+        <a href="{{ languageRoot }}#iletisim" class="cta">
+          B4B
+        </a>
+      </li>
+      <li class="language-menu">
+        <button class="language-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.2 2.5 3.2 5.5 3.2 9S14.2 18.5 12 21M12 3c-2.2 2.5-3.2 5.5-3.2 9S9.8 18.5 12 21"/></svg>
+          <span>TR</span>
+        </button>
+        <div class="language-dropdown" role="menu">
+          <a href="{{ assetBase }}" role="menuitem" data-language="tr">Türkçe</a>
+          <a href="{{ assetBase }}en/" role="menuitem" data-language="en">English</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<script>
+  document.querySelectorAll(".language-toggle").forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const menu = toggle.closest(".language-menu");
+      const open = menu.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open);
+    });
+  });
+  document.addEventListener("click", (event) => {
+    document.querySelectorAll(".language-menu.is-open").forEach((menu) => {
+      if (!menu.contains(event.target)) menu.classList.remove("is-open");
+    });
+  });
+</script>

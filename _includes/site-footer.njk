@@ -1,0 +1,31 @@
+<footer>
+  {% if language == "en" %}{% set languageRoot = assetBase ~ "en/" %}{% set productRoot = assetBase ~ "en/product/" %}{% else %}{% set languageRoot = assetBase %}{% set productRoot = assetBase ~ "urunler/" %}{% endif %}
+  <div class="container">
+    <div class="foot">
+      <div>
+        <a href="{{ languageRoot }}#top" class="brand">
+          <img src="{{ assetBase }}assets/img/logo.png" alt="Karagülle Motorlu Araçlar" />
+        </a>
+        <p>{% if language == "en" %}Reliable supply, on-time delivery.{% else %}Güvenilir tedarik, zamanında teslimat.{% endif %}</p>
+      </div>
+      <div>
+        <h4>{% if language == "en" %}Quick Links{% else %}Hızlı Linkler{% endif %}</h4>
+        <ul>
+          <li><a href="{{ languageRoot }}#hakkimizda">{% if language == "en" %}About Us{% else %}Hakkımızda{% endif %}</a></li>
+          <li><a href="{{ productRoot }}">{% if language == "en" %}Product Groups{% else %}Ürün Grupları{% endif %}</a></li>
+          <li><a href="{{ productRoot }}">{% if language == "en" %}Product List{% else %}Ürün Listesi{% endif %}</a></li>
+          <li><a href="{{ languageRoot }}#iletisim">{% if language == "en" %}Contact{% else %}İletişim{% endif %}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>{% if language == "en" %}Contact{% else %}İletişim{% endif %}</h4>
+        <ul>
+          <li><a href="tel:+905403604444">+90 540 360 44 44</a></li>
+          <li><a href="mailto:karagullemotor@gmail.com">karagullemotor@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="yil">2026</span> {% if language == "en" %}Karagulle Automotive. All rights reserved.{% else %}Karagülle Motorlu Araçlar. Tüm hakları saklıdır.{% endif %}</span></div>
+  </div>
+</footer>
+<script>document.getElementById("yil").textContent = new Date().getFullYear();</script>

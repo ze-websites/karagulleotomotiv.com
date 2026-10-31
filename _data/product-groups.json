@@ -1,0 +1,11 @@
+[
+  {"slug":"sasi","name_tr":"Alt Takım","name_en":"Underbody & Suspension","description_tr":"Şasi ve süspansiyon sistemleri için güvenilir çözümler.","description_en":"Reliable solutions for chassis and suspension systems.","image":"assets/img/urun-gruplari/alt-takim.webp"},
+  {"slug":"aktarma","name_tr":"Şanzıman Dişlisi","name_en":"Transmission Gears","description_tr":"Her marka ve model için üstün performans.","description_en":"Strong performance for different makes and models.","image":"assets/img/urun-gruplari/sanziman_dislisi.webp"},
+  {"slug":"aktarma-komple","name_tr":"Şanzıman","name_en":"Transmission","description_tr":"Güçlü ve uzun ömürlü şanzıman çözümleri.","description_en":"Strong and durable transmission solutions.","image":"assets/img/urun-gruplari/sanziman.webp"},
+  {"slug":"motor","name_tr":"Şarj ve Marş","name_en":"Starter & Alternator","description_tr":"Aracınızın enerjisi için en iyi parçalar.","description_en":"Reliable parts for your vehicle's electrical system.","image":"assets/img/urun-gruplari/sarj_ve_mars.webp"},
+  {"slug":"direksiyon","name_tr":"Direksiyon Sistemi","name_en":"Steering System","description_tr":"Güvenli sürüş için sağlam direksiyon sistemleri.","description_en":"Strong steering systems for safer driving.","image":"assets/img/urun-gruplari/direksiyon_sistemi.webp"},
+  {"slug":"kaporta","name_tr":"Kaporta","name_en":"Body Parts","description_tr":"Aracınızın dış görünümü için kaliteli parçalar.","description_en":"Quality parts for your vehicle's exterior.","image":"assets/img/urun-gruplari/kaporta.webp"},
+  {"slug":"kavrama","name_tr":"Kavrama","name_en":"Clutch","description_tr":"Sorunsuz güç aktarımı için ideal kavrama setleri.","description_en":"Clutch sets for smooth power transfer.","image":"assets/img/urun-gruplari/kavrama.webp"},
+  {"slug":"yaglama","name_tr":"Yağlama Sistemi","name_en":"Lubrication System","description_tr":"Motorunuz için kesintisiz yağlama çözümleri.","description_en":"Continuous lubrication solutions for your engine.","image":"assets/img/urun-gruplari/yaglama_sistemi.webp"},
+  {"slug":"motor-komple","name_tr":"Yarım ve Tam Motor","name_en":"Half & Complete Engine","description_tr":"Motorunuzun gücü için komple çözümler.","description_en":"Complete solutions for your engine.","image":"assets/img/urun-gruplari/yarim_ve_tam_motor.webp"}
+]

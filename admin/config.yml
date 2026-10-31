@@ -1,0 +1,45 @@
+local_backend:
+  url: http://localhost:8082/api/v1
+
+backend:
+  name: github
+  repo: ze-websites/karagulleotomotiv.com
+  branch: main
+  site_domain: www.karagulleotomotiv.com
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+locale: "tr"
+publish_mode: editorial_workflow
+
+collections:
+  - name: "products"
+    label: "Ürünler"
+    label_singular: "Ürün"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title_tr}} — {{category}}"
+    fields:
+      - { label: "Ürün adı (Türkçe)", name: "title_tr", widget: "string" }
+      - { label: "Ürün adı (English)", name: "title_en", widget: "string" }
+      - { label: "Açıklama (Türkçe)", name: "description_tr", widget: "text" }
+      - { label: "Açıklama (English)", name: "description_en", widget: "text" }
+      - label: "Ürün grubu"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Alt Takım", value: "sasi" }
+          - { label: "Şanzıman Dişlisi", value: "aktarma" }
+          - { label: "Şanzıman", value: "aktarma-komple" }
+          - { label: "Şarj ve Marş", value: "motor" }
+          - { label: "Direksiyon Sistemi", value: "direksiyon" }
+          - { label: "Kaporta", value: "kaporta" }
+          - { label: "Kavrama", value: "kavrama" }
+          - { label: "Yağlama Sistemi", value: "yaglama" }
+          - { label: "Yarım ve Tam Motor", value: "motor-komple" }
+      - { label: "Görsel", name: "image", widget: "image", required: false }
+      - label: "Anahtar kelimeler"
+        name: "keywords"
+        widget: "list"
+        field: { label: "Anahtar kelime", name: "keyword", widget: "string" }

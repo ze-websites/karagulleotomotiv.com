@@ -1,0 +1,100 @@
+---
+layout: page-layout.njk
+title: Alt Takım
+description: Alt takım ve süspansiyon ürünleri.
+assetBase: "../"
+bodyClass: product-page
+permalink: urunler/
+---
+<section class="product-catalog">
+<div class="catalog-wrap">
+<div class="catalog-intro">
+<div>
+<div class="product-eyebrow">Ürünlerimiz</div>
+<h1>Ürün <span>Listesi</span></h1>
+<p>İhtiyacınız olan ürün grubunu seçin, detaylı bilgi ve fiyat için bizimle iletişime geçin.</p>
+</div>
+<a class="catalog-back" href="index.html#urunler">← Ürün gruplarına dön</a>
+</div>
+
+<div class="catalog-toolbar">
+<div class="catalog-filters" aria-label="Kategori filtreleri">
+<button class="filter-button active" data-filter="all">Tümü</button>
+<button class="filter-button" data-filter="motor">Motor</button>
+<button class="filter-button" data-filter="aktarma">Aktarma</button>
+<button class="filter-button" data-filter="sasi">Şasi ve direksiyon</button>
+<button class="filter-button" data-filter="kaporta">Kaporta</button>
+{% for group in productGroups %}{% if group.slug != 'motor' and group.slug != 'aktarma' and group.slug != 'sasi' and group.slug != 'kaporta' %}<button class="filter-button" data-filter="{{ group.slug }}">{{ group.name_tr }}</button>{% endif %}{% endfor %}
+</div>
+<label class="catalog-search">
+<span class="sr-only">Ürün ara</span>
+<input id="product-search" type="search" placeholder="Ürün ara..." />
+</label>
+</div>
+
+<div class="catalog-grid" id="product-grid">
+{% for product in collections.products %}
+<article class="catalog-card cms-product" data-category="{{ product.data.category }}" data-name="{{ (product.data.title_tr ~ ' ' ~ ((product.data.keywords | default([], true)) | join(' '))) | lower }}" onclick="if (!event.target.closest('a')) window.location.href='../urunler/{{ product.data.title_tr | slug }}/'" style="cursor:pointer">
+{% if product.data.image %}<img class="product-image" src="../{{ product.data.image }}" alt="{{ product.data.title_tr }}" loading="lazy" />{% else %}<div class="product-placeholder"><span>{{ product.data.title_tr }}</span><small>ÜRÜN GÖRSELİ</small></div>{% endif %}
+<div class="catalog-card-body"><span class="catalog-category">{% for group in productGroups %}{% if group.slug == product.data.category %}{{ group.name_tr }}{% endif %}{% endfor %}</span><h2>{{ product.data.title_tr }}</h2><p>{{ product.data.description_tr }}</p><a href="../#iletisim">Teklif iste</a></div>
+</article>
+{% endfor %}
+<article class="catalog-card" data-category="sasi" data-name="alt takım komple set">
+<div class="product-placeholder"><span>ALT TAKIM</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Şasi ve direksiyon</span><h2>Alt Takım Komple Set</h2><p>Süspansiyon ve şasi sistemleri için güvenilir parçalar.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+<article class="catalog-card" data-category="aktarma" data-name="şanzıman dişlisi">
+<div class="product-placeholder"><span>ŞANZIMAN</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Aktarma</span><h2>Şanzıman Dişlisi</h2><p>Farklı marka ve modeller için hassas aktarma parçaları.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+<article class="catalog-card" data-category="aktarma" data-name="şanzıman komple">
+<div class="product-placeholder"><span>ŞANZIMAN</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Aktarma</span><h2>Şanzıman Komple</h2><p>Uzun ömürlü ve güçlü şanzıman çözümleri.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+<article class="catalog-card" data-category="motor" data-name="alternatör marş motoru">
+<div class="product-placeholder"><span>ŞARJ &amp; MARŞ</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Motor</span><h2>Alternatör ve Marş Motoru</h2><p>Aracınızın elektrik ve enerji sistemleri için.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+<article class="catalog-card" data-category="sasi" data-name="direksiyon kutusu sistemi">
+<div class="product-placeholder"><span>DİREKSİYON</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Şasi ve direksiyon</span><h2>Direksiyon Kutusu</h2><p>Güvenli ve kontrollü sürüş için direksiyon parçaları.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+<article class="catalog-card" data-category="kaporta" data-name="kaporta dış gövde">
+<div class="product-placeholder"><span>KAPORTA</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Kaporta</span><h2>Kaporta ve Dış Gövde</h2><p>Aracınızın görünümü ve onarımı için gövde parçaları.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+<article class="catalog-card" data-category="aktarma" data-name="debriyaj kavrama seti">
+<div class="product-placeholder"><span>KAVRAMA</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Aktarma</span><h2>Debriyaj Kavrama Seti</h2><p>Sorunsuz güç aktarımı için uyumlu kavrama setleri.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+<article class="catalog-card" data-category="motor" data-name="yağlama sistemi filtre yağ">
+<div class="product-placeholder"><span>YAĞLAMA</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Motor</span><h2>Yağlama Sistemi</h2><p>Motor koruması için yağ pompası ve ilgili parçalar.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+<article class="catalog-card" data-category="motor" data-name="yarım motor">
+<div class="product-placeholder"><span>MOTOR</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Motor</span><h2>Yarım Motor</h2><p>Motor yenileme süreçleri için komple çözümler.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+<article class="catalog-card" data-category="motor" data-name="tam motor komple">
+<div class="product-placeholder"><span>TAM MOTOR</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Motor</span><h2>Tam Motor</h2><p>Aracınıza uygun, montaja hazır motor seçenekleri.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+<article class="catalog-card" data-category="sasi" data-name="amortisör süspansiyon">
+<div class="product-placeholder"><span>SÜSPANSİYON</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Şasi ve direksiyon</span><h2>Amortisör ve Süspansiyon</h2><p>Konforlu sürüş ve yol tutuşu için dayanıklı parçalar.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+<article class="catalog-card" data-category="kaporta" data-name="kaput çamurluk panel">
+<div class="product-placeholder"><span>GÖVDE</span><small>PLACEHOLDER</small></div>
+<div class="catalog-card-body"><span class="catalog-category">Kaporta</span><h2>Kaput ve Çamurluk</h2><p>Dış gövde yenileme ve onarım parçaları.</p><a href="index.html#iletisim">Teklif iste</a></div>
+</article>
+</div>
+<p class="empty-products" id="empty-products">Aramanızla eşleşen ürün bulunamadı.</p>
+</div>
+</section>
+<script>
+  const buttons = document.querySelectorAll(".filter-button"), cards = document.querySelectorAll(".catalog-card"), search = document.getElementById("product-search");
+  const initialCategory = new URLSearchParams(window.location.search).get("kategori") || "all", initialButton = document.querySelector(`[data-filter="${initialCategory}"]`);
+  if (initialButton) { buttons.forEach((item) => item.classList.remove("active")); initialButton.classList.add("active"); }
+  function filterProducts() { const category = document.querySelector(".filter-button.active").dataset.filter, query = search.value.toLowerCase().trim(); let visible = 0; cards.forEach((card) => { const show = (category === "all" || card.dataset.category === category) && (!query || card.dataset.name.includes(query)); card.hidden = !show; if (show) visible++; }); document.getElementById("empty-products").hidden = visible !== 0; }
+  filterProducts(); buttons.forEach((button) => button.addEventListener("click", () => { buttons.forEach((item) => item.classList.remove("active")); button.classList.add("active"); filterProducts(); })); search.addEventListener("input", filterProducts);
+</script>

@@ -1,0 +1,14 @@
+---
+layout: page-layout.njk
+pagination:
+  data: collections.products
+  size: 1
+  alias: product
+permalink: "urunler/{{ product.data.title_tr | slug }}/"
+assetBase: "../../"
+bodyClass: product-detail-page
+eleventyComputed:
+  title: "{{ product.data.title_tr }}"
+  description: "{{ product.data.description_tr }}"
+---
+<section class="detail-page"><div class="detail-wrap"><a class="catalog-back" href="../../urunler/">← Ürün listesine dön</a><div class="detail-grid"><div>{% if product.data.image %}<img class="product-image" src="../../{{ product.data.image }}" alt="{{ product.data.title_tr }}" />{% else %}<div class="detail-placeholder"><span>{{ product.data.title_tr }}</span><small>ÜRÜN GÖRSELİ</small></div>{% endif %}</div><div class="detail-copy"><div class="product-eyebrow">Ürün</div><h1>{{ product.data.title_tr }}</h1><p>{{ product.data.description_tr }}</p><a class="btn" href="../../#iletisim">Teklif isteyin</a></div></div></div></section>

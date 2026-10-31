@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{% if language == "en" %}en{% else %}tr{% endif %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title }} | {% if language == "en" %}Karagulle Automotive{% else %}Karagülle Motorlu Araçlar{% endif %}</title>
+    <meta name="description" content="{{ description }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ assetBase }}assets/css/style.css?v=layout-1" />
+    <link rel="icon" href="{{ assetBase }}assets/img/favicon.png" type="image/png" />
+  </head>
+  <body class="{{ bodyClass | default('') }}">
+    {% include "site-header.njk" %}
+    <main>{{ content | safe }}</main>
+    {% include "site-footer.njk" %}
+  </body>
+</html>

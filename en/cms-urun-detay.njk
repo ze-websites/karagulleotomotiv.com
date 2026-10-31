@@ -1,0 +1,15 @@
+---
+layout: page-layout.njk
+pagination:
+  data: collections.products
+  size: 1
+  alias: product
+permalink: "en/product/{{ product.data.title_en | slug }}/"
+assetBase: "../../../"
+language: en
+bodyClass: product-detail-page english-page
+eleventyComputed:
+  title: "{{ product.data.title_en }}"
+  description: "{{ product.data.description_en }}"
+---
+<section class="detail-page"><div class="detail-wrap"><a class="catalog-back" href="../../../en/product/">← Back to product list</a><div class="detail-grid"><div>{% if product.data.image %}<img class="product-image" src="../../../{{ product.data.image }}" alt="{{ product.data.title_en }}" />{% else %}<div class="detail-placeholder"><span>{{ product.data.title_en }}</span><small>PRODUCT IMAGE</small></div>{% endif %}</div><div class="detail-copy"><div class="product-eyebrow">Product</div><h1>{{ product.data.title_en }}</h1><p>{{ product.data.description_en }}</p><a class="btn" href="../../../en/#iletisim">Request a quote</a></div></div></div></section>
