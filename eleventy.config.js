@@ -1,5 +1,8 @@
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addGlobalData("productGroups", require("./_data/product-groups.json"));
+  const productGroups = require("./_data/product-groups.json");
+  const groupSlugs = ["alt-takim", "sanziman-dislisi", "sanziman", "sarj-mars", "direksiyon-sistemi", "kaporta", "kavrama", "yaglama", "yarim-tam-motor"];
+  productGroups.forEach((group, index) => { group.slug = groupSlugs[index]; });
+  eleventyConfig.addGlobalData("productGroups", productGroups);
   eleventyConfig.addFilter("slug", (value) => String(value || "")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")

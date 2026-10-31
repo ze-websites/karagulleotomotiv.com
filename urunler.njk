@@ -92,6 +92,8 @@ permalink: urunler/
 </div>
 </section>
 <script>
+  document.querySelectorAll('.filter-button[data-filter="motor"], .filter-button[data-filter="aktarma"], .filter-button[data-filter="sasi"], .filter-button[data-filter="kaporta"]').forEach((button) => button.remove());
+  document.querySelectorAll(".catalog-card:not(.cms-product)").forEach((card) => card.remove());
   const buttons = document.querySelectorAll(".filter-button"), cards = document.querySelectorAll(".catalog-card"), search = document.getElementById("product-search");
   const initialCategory = new URLSearchParams(window.location.search).get("kategori") || "all", initialButton = document.querySelector(`[data-filter="${initialCategory}"]`);
   if (initialButton) { buttons.forEach((item) => item.classList.remove("active")); initialButton.classList.add("active"); }
