@@ -3,7 +3,7 @@ backend:
   repo: ze-websites/karagulleotomotiv.com
   branch: main
   base_url: https://www.karagulleotomotiv.com
-  auth_endpoint: api/auth
+  auth_endpoint: /api/auth
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
