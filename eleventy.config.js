@@ -12,6 +12,7 @@ module.exports = function (eleventyConfig) {
     .replace(/^-|-$/g, ""));
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
   eleventyConfig.addPassthroughCopy({ admin: "admin" });
+  eleventyConfig.addPassthroughCopy({ "admin/config.yml": "config.yml" });
   eleventyConfig.addCollection("products", (collectionApi) =>
     collectionApi.getFilteredByGlob("content/products/*.md")
   );
