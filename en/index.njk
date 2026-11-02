@@ -320,6 +320,25 @@ permalink: en/
   </div>
 </section>
 
+<section class="brands-section" id="markalar">
+  <div class="container">
+    <div class="head">
+      <h2>Our Brands</h2>
+      <p>Selected brands we work with through a reliable supply network.</p>
+    </div>
+    {% if collections.brands and collections.brands.length %}
+      <div class="brands-grid">
+        {% for brand in collections.brands %}
+          <article class="brand-card">
+            <img src="{{ brand.data.logo }}" alt="{{ brand.data.name }}" loading="lazy" decoding="async" />
+            <span>{{ brand.data.name }}</span>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
 <section id="iletisim">
   <div class="container contact-grid">
     <div>

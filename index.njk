@@ -330,6 +330,25 @@ permalink: /
   </div>
 </section>
 
+<section class="brands-section" id="markalar">
+  <div class="container">
+    <div class="head">
+      <h2>Markalarımız</h2>
+      <p>Güvenilir tedarik ağıyla çalıştığımız seçkin markalar.</p>
+    </div>
+    {% if collections.brands and collections.brands.length %}
+      <div class="brands-grid">
+        {% for brand in collections.brands %}
+          <article class="brand-card">
+            <img src="{{ brand.data.logo }}" alt="{{ brand.data.name }}" loading="lazy" decoding="async" />
+            <span>{{ brand.data.name }}</span>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
 <section id="iletisim">
   <div class="container contact-grid">
     <div>

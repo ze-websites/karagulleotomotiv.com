@@ -16,6 +16,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("products", (collectionApi) =>
     collectionApi.getFilteredByGlob("content/products/*.md")
   );
+  eleventyConfig.addCollection("brands", (collectionApi) =>
+    collectionApi.getFilteredByGlob("content/brands/*.md")
+  );
 
   // Keep the original standalone HTML file untouched while Eleventy builds
   // the Nunjucks source into the output directory.
