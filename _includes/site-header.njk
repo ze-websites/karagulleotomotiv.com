@@ -35,16 +35,6 @@
       <li>
         <a href="{{ languageRoot }}#urunler">{% if isEnglish %}Products{% else %}Ürün Listesi{% endif %}</a>
       </li>
-      <li>
-        <a href="{{ languageRoot }}#iletisim" class="cta">
-          {% if isEnglish %}Contact{% else %}İletişim{% endif %}
-        </a>
-      </li>
-      <li>
-        <a href="https://b4b.karagulleotomotiv.com/" class="cta">
-          B4B
-        </a>
-      </li>
       <li class="language-menu">
         <button class="language-toggle" type="button" aria-expanded="false" aria-haspopup="true">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.2 2.5 3.2 5.5 3.2 9S14.2 18.5 12 21M12 3c-2.2 2.5-3.2 5.5-3.2 9S9.8 18.5 12 21"/></svg>
@@ -54,6 +44,16 @@
           <a href="{{ assetBase }}" role="menuitem" data-language="tr">Türkçe</a>
           <a href="{{ assetBase }}en/" role="menuitem" data-language="en">English</a>
         </div>
+      </li>
+      <li>
+        <a href="{{ languageRoot }}#iletisim" class="cta">
+          {% if isEnglish %}Contact{% else %}İletişim{% endif %}
+        </a>
+      </li>
+      <li>
+        <a href="https://b4b.karagulleotomotiv.com/" class="cta">
+          B4B
+        </a>
       </li>
     </ul>
   </div>
